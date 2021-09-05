@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>InvestingToday</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">		
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/invest.css' %}">
+</head>
+
+<body>
+ <input id="slider" class="customSlider" type="checkbox">
+ <label for="slider"></label> 
+ <div class="wrapper" id="wrapper">
+  <div id="insidewrapper">  
+   {% if im %}  
+    <h5>InvestingToday<span class="badge badge-pill" id="parameters">{{im.duration}} days<i class="fas fa-arrow-right" id="narrow"></i>{{im.profit}}% profit</span></h5>
+   {% else %}
+    <h5>InvestingToday<span class="badge badge-pill" id="parameters">Not Available</span></h5>   
+   {% endif %}
+   <div id="divicons">
+    <img src="https://img.icons8.com/color/48/000000/visa.png"> 
+    <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png"> 
+    <img src="https://img.icons8.com/color/48/000000/maestro.png"> 
+   </div>
+   <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+     <label>Username :</label>
+     <input type="text" class="form-control" value="{{investor.username}}" disabled>
+    </div>
+    <div class="form-group" id="FormRow">
+     <label>Phone Number :</label>
+     <input type="text" class="form-control" value="{{investor.number_phone}}" disabled>
+    </div>
+    <div class="form-group" id="FormRow">
+     <label>Email :</label>
+     <input type="email" class="form-control" value="{{investor.email}}" disabled>
+    </div>
+    <div class="form-group" id="FormRow">
+     <label>Amount :</label>
+     <input type="number" class="form-control" name="amount_to_invest" oninvalid='this.setCustomValidity("This field is Required")' placeholder="Enter amount to invest here (USD)" required>
+    </div>
+    <div id="Error">
+     <small>{{message}}</small>
+    </div>
+    <div style="text-align: center;">   
+     <button type="submit" class="button" name="pay">Pay</button>
+    </div> 
+    <div style="text-align: center;">   
+     <button type="button" class="buttonGB" onclick="goBack()">Go Back<i class="fas fa-chevron-circle-left" id="iconbuttons"></i></button>
+    </div> 
+   </form>
+  </div>
+ </div>
+</body>
+<script>
+ function goBack() { window.history.back(); }
+</script>
+</html>

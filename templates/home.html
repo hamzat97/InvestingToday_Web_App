@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>InvestingToday</title>
+  {% load static %}      
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">		
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/owl.theme.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/mobile.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/cool-gray.css' %}">
+</head>
+
+<body data-spy="scroll" data-target="#main-navbar">
+ <div class="page-loader"></div>
+ <div class="body">      
+  <header id="header" class="header-main">
+   <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+    <div class="container">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+      </button>
+      <ul class="nav navbar-nav navbar-left">
+       <li><a class="page-scroll" style="text-decoration: none; text-transform: none; font-size: 20px;" href="http://localhost:8000"><i class="fas fa-coins" style="margin-right: 6px;"></i>InvestingToday</a></li>
+      </ul>           
+     </div>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a class="page-scroll" href="http://localhost:8000">HOME</a></li>
+       <li><a class="page-scroll" href="#about">ABOUT</a></li>
+       <li><a class="page-scroll" href="#team">TEAM</a></li>    
+       <li><a class="page-scroll" href="#contact">CONTACT</a></li>
+       <li><a class="page-scroll" href="http://localhost:8000/signin">SIGN IN</a></li> 
+       <li><a class="page-scroll" href="http://localhost:8000/signup">CREATE ACCOUNT</a></li> 
+      </ul>
+     </div>
+    </div>
+   </nav>
+  </header>          
+  <section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url({% static 'images/background.jpg' %});">			
+   <div class="container">
+    <div class="caption text-center text-white" data-stellar-ratio="0.7">
+	 <div id="owl-intro-text" class="owl-carousel">
+    <div class="item">
+	   <h1 style="text-transform: none;"><i class="fas fa-coins" style="margin-right: 6px;"></i>InvestingToday</h1>
+	   <p>Invest and earn money online</p>
+     <div class="extra-space-l"></div>
+     <a class="btn btn-blank" href="#" target="_blank" role="button">View More!</a>
+	  </div>
+	  <div class="item">
+	   <h1>Join with us</h1>
+	   <p>To this great journey</p>
+	   <div class="extra-space-l"></div>
+	   <a class="btn btn-blank" href="#" target="_blank" role="button">View More!</a>
+	  </div>
+	  <div class="item">
+	   <h1>Create your account now</h1>
+	   <p>And get started investing</p>
+	   <div class="extra-space-l"></div>
+	   <a class="btn btn-blank" href="#" target="_blank" role="button">View More!</a>
+	  </div>
+      <div class="item">
+	   <h1>Have any questions ?</h1>
+       <p>Just contact us, we would like to hear from you</p>
+	   <div class="extra-space-l"></div>
+	   <a class="btn btn-blank" href="#" target="_blank" role="button">View More!</a>
+	  </div>
+	 </div>
+	</div> 
+   </div> 
+  </section>
+  <footer class="text-off-white">
+   <div class="footer">
+    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">    
+     Copyright &copy;<script>document.write(new Date().getFullYear());</script> | InvestingToday | All Rights Reserved                   
+    </div>
+   </div>
+  </footer>                                          
+ </div>
+</body> 
+<script src="{% static 'home/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'home/js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'home/js/wow.min.js' %}"></script>
+<script src="{% static 'home/js/waypoints.min.js' %}"></script>
+<script src="{% static 'home/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'home/js/classie.js' %}"></script>
+<script src="{% static 'home/js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'home/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'home/js/smoothscroll.js' %}"></script>
+<script src="{% static 'home/js/theme.js' %}"></script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>InvestingToday</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">		
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+</head>
+
+<body>
+ <input id="slider" class="customSlider" type="checkbox">
+ <label for="slider"></label> 
+ <div class="wrapper" id="wrapper">
+  <div id="insidewrapper">  
+   <form method="post">
+    {% csrf_token %}
+    <div class="form-group" style="margin-top: 5px;">
+     <label><i class="fas fa-star-of-life" id="starofline"></i>Number Phone :</label>
+     <input type="text" class="form-control" name="number_phone" placeholder="number phone">
+    </div>    
+    <div class="form-group" >
+     <label><i class="fas fa-star-of-life" id="starofline"></i>Adress :</label>
+     <input type="text" class="form-control" name="adress" placeholder="adress">
+    </div>      
+    <div class="form-group" >
+     <label><i class="fas fa-star-of-life" id="starofline"></i>Email :</label>
+     <input type="email" class="form-control" name="email" placeholder="email">
+    </div>
+    <div class="form-group" >
+     <label><i class="fas fa-star-of-life" id="starofline"></i>Bank Name :</label>
+     <input type="text" class="form-control" name="bank_name" placeholder="bank name">
+    </div>    
+    <div class="form-group" >
+     <label><i class="fas fa-star-of-life" id="starofline"></i>Bank Account :</label>
+     <input type="text" class="form-control" name="bank_account" placeholder="bank account">
+    </div>    
+    <div style="text-align: center;">   
+     <button type="submit" class="button" name="save">Save</button>
+    </div> 
+    <div style="text-align: center;">   
+     <button type="button" class="buttonGB" onclick="goBack()">Go Back<i class="fas fa-chevron-circle-left" id="iconbuttons"></i></button>
+    </div>    
+   </form>
+  </div>
+ </div>
+</body>
+<script>
+ function goBack() { window.history.back(); }
+</script>
+</html>

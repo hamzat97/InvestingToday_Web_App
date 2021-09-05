@@ -1,0 +1,157 @@
+$blue-gradient: linear-gradient(to bottom right, #6452E9, #639FF9);
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+width: 100%;
+height: 113vh;
+display: flex;
+position: relative;
+background: #6f42c1;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+font-family: 'Poppins', sans-serif;
+font-size: 100%;
+}
+
+.customSlider {
+opacity: 0;
+display: none;
+box-shadow: 0 8px 16px -1px rgba(255, 70, 81, 0.2);
+
++ label {
+position: relative;
+top: 35px;
+left: 15px;
+cursor: pointer;
+
+&:before, &:after {
+background: #000000;
+position: absolute;
+content: '';
+}
+
+&:before {
+top: -90px; 
+left: -60px;
+width: 80px;
+height: 40px;
+background: $blue-gradient;
+border-radius: 20px;
+transition: background .75s;
+}
+
+&:after {
+height: 34px; 
+width: 34px;
+top: -87px; 
+left: -55px;
+border-radius: 50%;
+transition: all .5s;
+}
+}
+
+&:checked + label:after {
+height: 34px; 
+width: 34px;
+top: -87px; 
+left: -19px;
+border-radius: 50%;
+}
+
+&:checked ~ .wrapper {
+color: #fff;
+transition: background .6s ease;
+background: #31394D;
+
+#Error{
+text-align: center; 
+font-size: 14px; 
+color: yellow;
+margin-top: -3px;
+}
+}
+}
+
+.wrapper {
+width: 440px;
+height: 600px;
+margin-top: -9px;
+background: #FDFEFF;
+transition: background .6s ease;
+border-radius: 10px;
+padding: 20px 20px 20px 20px;
+box-shadow: 0 8px 40px rgba(#000000, .2);
+}
+
+#wrapper {
+display: flex; 
+align-items: center; 
+justify-content: center;
+}
+
+#insidewrapper {
+width: 90%;
+}
+
+#divicons {
+margin-bottom: 15px;
+}
+
+#parameters {
+float: right; 
+height: 25px; 
+color: white;
+transition: all .3s ease-in-out; 
+background-image: linear-gradient(135deg, #6452E9 0%, #639FF9 100%);
+}
+
+#narrow {
+font-size: 10px; 
+margin-left: 5px; 
+margin-right: 5px;
+}
+
+#FormRow {
+margin-top: -5px;    
+}
+
+#Error{    
+text-align: center; 
+font-size: 14px; 
+color: #e21313;
+margin-top: -3px;
+}
+
+#iconbuttons{
+margin-left: 7px;
+}
+    
+@mixin createButton($width, $height, $radius, $gradientFirst, $gradientThird) {
+width: $width;
+height: $height;
+border-radius: $radius;
+background-image: linear-gradient(135deg, $gradientFirst 0%, $gradientThird 100%);
+outline: none;
+border: none;
+cursor: pointer;
+font-size: 18px;
+color: white;
+}
+
+.button {
+margin-top: 18px;
+transition: all .3s ease-in-out;
+@include createButton(150px, 40px, 50px,#6452E9,#639FF9);
+}  
+
+.buttonGB {
+margin-top: 7px;
+transition: all .3s ease-in-out;
+@include createButton(150px, 40px, 50px,#6452E9,#639FF9);
+} 

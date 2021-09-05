@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>InvestingToday</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">		
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/account.css' %}">
+</head>
+
+<body>
+ <input id="slider" class="customSlider" type="checkbox">
+ <label for="slider"></label> 
+ <div class="wrapper">   
+  <div class="profile">
+   <img src="{% static 'images/profile_user.png' %}" class="thumbnail">
+   <div class="check"><i class="fas fa-check"></i></div>
+   <h3 class="name" id="fullname">{{investor.first_name}} {{investor.last_name}}</h3>
+   <p class="title">@{{investor.username}}</p>
+   <form method="post">
+    {% csrf_token %}
+    <button type="submit" name="invest" class="btn" id="invbtn">Invest Now<i class="fas fa-money-bill-wave" id="iconbuttons"></i></button>
+    <button type="submit" name="edit" class="btn" id="invbtn">Edit Profile<i class="fas fa-user-edit" id="iconbuttons"></i></button>
+    <a href="http://localhost:8000" id="logout"><button type="button" class="btn" id="invbtn">Log Out<i class="fas fa-sign-out-alt" id="iconbuttons"></i></button></a>
+   </form>
+  </div> 
+  <div class="icons" style="text-align: center;">
+   <div class="icon">
+    <a><i class="fas fa-dollar-sign"></i></a>
+     <h4>{{amount_invested}}{{l1.0}}</h4>
+    <p>Amount<br>Invested</p>
+   </div>    
+   <div class="icon" style="text-align: center;">
+    <a><i class="fas fa-hourglass-half"></i></a>
+    <h4>{{investment_in_progress}}{{l2.0}}</h4>
+    <p>Investment<br>In Progress</p>
+   </div>  
+   <div class="icon" style="text-align: center;">
+    <a><i class="fas fa-hand-holding-usd"></i></a>
+    <h4>{{net_profit}}{{l3.0}}</h4>
+    <p>Net<br>Profit</p>
+   </div>
+  </div>
+ </div>
+</body>
+</html>

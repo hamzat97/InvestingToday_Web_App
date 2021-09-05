@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>InvestingToday</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script>
+ window.onload = function() {
+  FlutterwaveCheckout({
+    public_key: "Replace_your_flutterwave_public_key_here",
+    tx_ref: "AK_"+Date.now(),
+    amount: "{{amount}}",
+    payment_options: "card,mobilemoney,ussd",
+    currency: "NGN",
+    customer: {
+      email: "{{investor.email}}",
+      phonenumber: "{{investor.number_phone}}",
+      name: "{{investor.username}}",
+    },
+    callback: (data)=> {
+      console.log(data);
+      const reference = data.tx_ref;
+      alert('Payment complete! Reference: ' + reference);
+    },
+    customizations: {
+      title: "InvestingToday",
+    },
+  });
+}
+</script>    
+</body>
+</html>

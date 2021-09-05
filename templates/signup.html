@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>InvestingToday</title>
+  <meta charset="utf-8">
+  {% load static %}
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="icon" type="image/png" size="16x16" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+ <div class="form-body">
+  <div class="row">
+   <div class="form-holder">
+    <div class="form-content">
+     <div class="form-items" id="FormsItems">
+      <div class="col-md-12" id="Title">
+       <h3>Sign Up Now</h3>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       <div class="form-row" id="FormRow">
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="first_name" oninvalid='this.setCustomValidity("This field is Required")' placeholder="first name" required>          
+        </div>
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="last_name" oninvalid='this.setCustomValidity("This field is Required")' placeholder="last name" required>
+        </div>
+       </div>
+       <div class="form-row" id="FormRow">
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="username" oninvalid='this.setCustomValidity("This field is Required")' placeholder="username" required> 
+        </div>
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="adress" oninvalid='this.setCustomValidity("This field is Required")' placeholder="adress" required>
+        </div>
+       </div>
+       <div class="form-row" id="FormRow">
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="number_phone" oninvalid='this.setCustomValidity("This field is Required")' placeholder="number phone" required>
+        </div>
+        <div class="form-group col-md-6">
+         <input type="email" class="form-control" name="email" oninvalid='this.setCustomValidity("This field is either empty or invalid")' placeholder="email" required>
+        </div>
+       </div>       
+       <div class="form-row" id="FormRow">
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="bank_name" oninvalid='this.setCustomValidity("This field is Required")' placeholder="bank name" required>
+        </div>
+        <div class="form-group col-md-6">
+         <input type="text" class="form-control" name="bank_account" oninvalid='this.setCustomValidity("This field is Required")' placeholder="bank account" required>
+        </div>    
+       </div>
+       <div class="form-row" id="FormRow">
+        <div class="form-group col-md-6">
+         <input type="password" class="form-control" name="password1" oninvalid='this.setCustomValidity("This field is Required")' placeholder="password" required>
+        </div>
+        <div class="form-group col-md-6">
+         <input type="password" class="form-control" name="password2" oninvalid='this.setCustomValidity("This field is Required")' placeholder="confirm password" required>
+        </div>  
+       </div> 
+       <div class="form-row" id="ImagesRow">
+        <div class="form-group col-md-6">
+         <label style="color: white;"><i class="fas fa-address-card" id="ICLogo"></i>Front of Identity Card</label>
+         <input type="file" class="form-control" name="front_identity_card" oninvalid='this.setCustomValidity("This field is Required")' required>
+        </div>
+        <div class="form-group col-md-6">
+         <label style="color: white;"><i class="fas fa-address-card" id="ICLogo"></i>Back of Identity Card</label>
+         <input type="file" class="form-control btn-upload" name="back_identity_card" oninvalid='this.setCustomValidity("This field is Required")' required>  
+        </div>
+       </div> 
+       {% if message %} 
+       <div id="Error">
+        <small>{{message}}</small> 
+       </div>
+       {% endif %}                 
+       <div class="form-button mt-3" id="Button">
+        <button id="submit" type="submit" class="btn btn-success">Register</button>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</body>
+</html>

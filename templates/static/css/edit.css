@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  position: relative;
+  background: #6f42c1;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 100%;
+}
+
+.customSlider {
+  opacity: 0;
+  display: none;
+  box-shadow: 0 8px 16px -1px rgba(255, 70, 81, 0.2);
+}
+.customSlider + label {
+  position: relative;
+  top: 35px;
+  left: 15px;
+  cursor: pointer;
+}
+.customSlider + label:before, .customSlider + label:after {
+  background: #000000;
+  position: absolute;
+  content: "";
+}
+.customSlider + label:before {
+  top: -90px;
+  left: -60px;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(to bottom right, #6452E9, #639FF9);
+  border-radius: 20px;
+  transition: background 0.75s;
+}
+.customSlider + label:after {
+  height: 34px;
+  width: 34px;
+  top: -87px;
+  left: -55px;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.customSlider:checked + label:after {
+  height: 34px;
+  width: 34px;
+  top: -87px;
+  left: -19px;
+  border-radius: 50%;
+}
+.customSlider:checked ~ .wrapper {
+  color: #fff;
+  transition: background 0.6s ease;
+  background: #31394D;
+}
+.customSlider:checked ~ .wrapper #Error {
+  text-align: center;
+  font-size: 14px;
+  color: yellow;
+  margin-top: -3px;
+}
+
+.wrapper {
+  width: 500px;
+  height: 580px;
+  margin-top: -9px;
+  background: #FDFEFF;
+  transition: background 0.6s ease;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#insidewrapper {
+  width: 90%;
+}
+
+#divicons {
+  margin-bottom: 15px;
+}
+
+#parameters {
+  float: right;
+  height: 25px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(135deg, #6452E9 0%, #639FF9 100%);
+}
+
+#narrow {
+  font-size: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#Error {
+  text-align: center;
+  font-size: 14px;
+  color: #e21313;
+  margin-top: -3px;
+}
+
+#starofline {
+  margin-right: 6px;
+  font-size: 6px;
+}
+
+#iconbuttons {
+  margin-left: 7px;
+}
+
+.button {
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  background-image: linear-gradient(135deg, #6452E9 0%, #639FF9 100%);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+}
+
+.buttonGB {
+  margin-top: 7px;
+  transition: all 0.3s ease-in-out;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  background-image: linear-gradient(135deg, #6452E9 0%, #639FF9 100%);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+}/*# sourceMappingURL=edit.css.map */
