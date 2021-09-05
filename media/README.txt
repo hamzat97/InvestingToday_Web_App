@@ -1,0 +1,1 @@
+This folder will be dedicated to store identity cards images (front and back)
